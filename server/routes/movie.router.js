@@ -16,6 +16,40 @@ router.get('/', (req, res) => {
 
 });
 
+//create a get req to get a specific movie by an id 
+// router.get('/:id', (req,res) => {
+//   console.log('REQ.PARAMS:', req.params);
+//   const query = `SELECT * FROM movies WHERE ${req.params} = movies.id`;
+//   pool.query(query)
+//     .then( results => { 
+//       console.log(results.rows)
+//       res.send(results.rows);
+//     })
+//     .catch( err => {
+//       console.log('ERROR: Get specific movie', err);
+//       res.sendStatus(500)
+//     })
+// });
+
+
+router.get('/:id', (req, res) => {
+  console.log('req.params:', req.params.id);
+  
+  const queryText = `SELECT "movies"."title", "movies"."poster", "movies"."description", "genres"."name" FROM "movies"
+  JOIN "movies_genres" ON "movies"."id" = "movies_genres"."movie_id"
+  JOIN "genres" ON "genres"."id" = "movies_genres"."genre_id"
+  WHERE "movies"."id" = ${req.params.id};`
+  pool.query(queryText).then((result) => {
+    console.log('Result:', result.rows);
+    res.send(result.rows);
+  }).catch((error) => {
+    console.log('ERROR in specific movie GET:', error);
+    res.sendStatus(500);
+  })
+})
+
+
+
 router.post('/', (req, res) => {
   console.log(req.body);
   // RETURNING "id" will give us back the id of the created movie
