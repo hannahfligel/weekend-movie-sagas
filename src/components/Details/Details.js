@@ -17,6 +17,7 @@ function Details(props) {
       {/* history.goBack back to previous page */}
       <button onClick={history.goBack}>Back to list</button>
       <p>{specificMovie.title}</p>
+      <p>{specificMovie.genres}</p>
       <img src={specificMovie.poster}/>
       <p>{specificMovie.description}</p>
     </div>

@@ -17,19 +17,33 @@ function* rootSaga() {
     yield takeEvery('GET_SPECIFIC_MOVIE', getSpecificMovie);
 }
 
+//create a getSpecificMovie generator function 
 function *getSpecificMovie(action){
-    console.log( 'in getSpecificMovie:', action.payload );
+    console.log( 'in getSpecificMovie:', action.payload ); 
     try{
-        const response = yield axios.get( `/api/movie/${action.payload}` );
+        //create a variable called response to hold the value of what the get req gets back from the server
+        const response = yield axios.get( `/api/movie/${action.payload}` );// <-- action.payload is the movie.id passed from MovieList
         console.log( 'back from SPECIFIC get:', response.data );
         // use a "put" to dispatch for sagas
-        //SET means go from the saga to the reducer 
-        yield put( { type: 'SET_SPECIFIC_MOVIE', payload: response.data[0] } );
+        //SET means go from the saga to the reducer
+        //save the response from the get req to a reducer with the type of SET_SPECIFIC_MOVIE 
+        yield put( { type: 'SET_SPECIFIC_MOVIE', payload: response.data[0] } ); // <--[0] is because we're getting an array with one item
       } catch( err ){
         alert( 'no' );
         console.log( err );
       }
 }//end getSpecificMovie
+
+// create a reducer to store the specific movie returned from the server (dispatched from getSpecificMovie)
+const specificMovie = (state = {}, action) => {
+    switch (action.type) {
+        case 'SET_SPECIFIC_MOVIE':
+            console.log("specific movies reducer", action.payload);
+            return action.payload;
+        default:
+            return state;
+    }
+}
 
 
 function* fetchAllMovies() {
@@ -52,17 +66,6 @@ const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
             console.log("movies reducer", action.payload)
-            return action.payload;
-        default:
-            return state;
-    }
-}
-
-// Used to store movies returned from the server
-const specificMovie = (state = {}, action) => {
-    switch (action.type) {
-        case 'SET_SPECIFIC_MOVIE':
-            console.log("specific movies reducer", action.payload);
             return action.payload;
         default:
             return state;

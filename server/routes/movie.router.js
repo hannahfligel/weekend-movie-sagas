@@ -16,26 +16,23 @@ router.get('/', (req, res) => {
 
 });
 
-//create a get req to get a specific movie by an id 
-// router.get('/:id', (req,res) => {
-//   console.log('REQ.PARAMS:', req.params);
-//   const query = `SELECT * FROM movies WHERE ${req.params} = movies.id`;
-//   pool.query(query)
-//     .then( results => { 
-//       console.log(results.rows)
-//       res.send(results.rows);
-//     })
-//     .catch( err => {
-//       console.log('ERROR: Get specific movie', err);
-//       res.sendStatus(500)
-//     })
-// });
-
 
 router.get('/:id', (req, res) => {
   console.log('req.params:', req.params.id);
   
-  const queryText = `SELECT * FROM "movies" WHERE "movies"."id" = ${req.params.id};`
+  const queryText = 
+  `SELECT genres.name AS "genres", movies.title, movies.description, movies.poster
+  FROM
+  movies_genres
+  JOIN
+  movies
+  ON 
+  movies.id = movies_genres.movie_id
+  JOIN 
+  genres
+  ON
+  genres.id = movies_genres.genre_id
+  WHERE movies.id = ${req.params.id};`
   pool.query(queryText).then((result) => {
     console.log('Result:', result.rows);
     res.send(result.rows);
