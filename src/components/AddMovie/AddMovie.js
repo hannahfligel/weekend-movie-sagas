@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useHistory } from "react-router-dom";
+
 
 function AddMovie(props) {
   //const reducerName = useSelector( store => store.reducerName );
   //const [name, setName] =useState ( null );
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const genres = useSelector((store) => store.genres);
 
@@ -23,7 +26,13 @@ function AddMovie(props) {
           type: 'SUBMIT_MOVIE',
           payload: newMovie
       })
+      history.push('/');
   }
+
+  const cancel = () => {
+      history.push('/');
+  }
+
 
   //use useEffect to dispatch a get req to get all genres from data base
   useEffect(() => {
@@ -62,7 +71,7 @@ function AddMovie(props) {
         })}
       </select>
       <button onClick={submit}>Save</button>
-      <button>Cancel</button>
+      <button onClick={cancel}>Cancel</button>
     </div>
   );
 }
