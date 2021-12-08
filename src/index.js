@@ -15,7 +15,22 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('GET_SPECIFIC_MOVIE', getSpecificMovie);
+    yield takeEvery('FETCH_GENRES', getGenres);
 }
+
+function *getGenres(action){
+    console.log( 'in getGenres', action.payload );
+    try{
+        const response = yield axios.get( `/api/genre`);
+        yield put( {
+            type: 'SET_GENRES',
+            payload: response.data 
+        })
+    }catch( err ){
+        alert( 'no' );
+        console.log( err );
+    }
+}//end getGenres
 
 //create a getSpecificMovie generator function 
 function *getSpecificMovie(action){
@@ -76,6 +91,7 @@ const movies = (state = [], action) => {
 const genres = (state = [], action) => {
     switch (action.type) {
         case 'SET_GENRES':
+        console.log('SET_GENRES', action.payload)
             return action.payload;
         default:
             return state;
