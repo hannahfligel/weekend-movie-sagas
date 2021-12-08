@@ -16,7 +16,20 @@ function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('GET_SPECIFIC_MOVIE', getSpecificMovie);
     yield takeEvery('FETCH_GENRES', getGenres);
+    yield takeEvery('SUBMIT_MOVIE', submitMovie);
 }
+
+//generator function that performs that axios post req for the new movie information  
+function *submitMovie(action){
+    console.log('-->in submitMovie', action.payload);
+    try {
+        yield axios.post('/api/movie', action.payload);
+    }
+    catch (error) {
+        console.log('ERROR in addMovie post', error);
+    }
+}
+
 
 function *getGenres(action){
     console.log( 'in getGenres', action.payload );

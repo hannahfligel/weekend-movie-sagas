@@ -15,8 +15,15 @@ function AddMovie(props) {
     title: "",
     poster: "",
     description: "",
-    genre: 0, //<-- since genre will be placed into the movies_genres junction table, only the id is needed rather than the name
+    genre_id: 0, //<-- since genre will be placed into the movies_genres junction table, only the id is needed rather than the name
   });
+
+  const submit = () => {
+      dispatch ({
+          type: 'SUBMIT_MOVIE',
+          payload: newMovie
+      })
+  }
 
   //use useEffect to dispatch a get req to get all genres from data base
   useEffect(() => {
@@ -27,20 +34,20 @@ function AddMovie(props) {
     <div>
       <h1>AddMovie</h1>
       <input
-        onChange={(event) => setNewMovie({ title: event.target.value })}
+        onChange={(event) => setNewMovie({ ...newMovie, title: event.target.value })}
         placeholder="movie title"
       ></input>
       <input
-        onChange={(event) => setNewMovie({ poster: event.target.value })}
+        onChange={(event) => setNewMovie({ ...newMovie, poster: event.target.value })}
         placeholder="image url"
       ></input>
       <textarea
-        onChange={(event) => setNewMovie({ description: event.target.value })}
+        onChange={(event) => setNewMovie({ ...newMovie, description: event.target.value })}
         placeholder="movie description"
       ></textarea>
       <label htmlFor="genreInput">Movie Genre</label>
       <select
-        onChange={(event) => setNewMovie({ genre: event.target.value })}
+        onChange={(event) => setNewMovie({ ...newMovie, genre_id: event.target.value })}
         id="genreInput"
         name="Movie Genre"
       >
@@ -54,7 +61,7 @@ function AddMovie(props) {
           );
         })}
       </select>
-      <button>Save</button>
+      <button onClick={submit}>Save</button>
       <button>Cancel</button>
     </div>
   );
