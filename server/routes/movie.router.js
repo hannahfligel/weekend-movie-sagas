@@ -35,10 +35,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   console.log('req.params:', req.params.id);
   
-  const queryText = `SELECT "movies"."title", "movies"."poster", "movies"."description", "genres"."name" FROM "movies"
-  JOIN "movies_genres" ON "movies"."id" = "movies_genres"."movie_id"
-  JOIN "genres" ON "genres"."id" = "movies_genres"."genre_id"
-  WHERE "movies"."id" = ${req.params.id};`
+  const queryText = `SELECT * FROM "movies" WHERE "movies"."id" = ${req.params.id};`
   pool.query(queryText).then((result) => {
     console.log('Result:', result.rows);
     res.send(result.rows);

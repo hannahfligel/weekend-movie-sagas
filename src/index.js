@@ -24,7 +24,7 @@ function *getSpecificMovie(action){
         console.log( 'back from SPECIFIC get:', response.data );
         // use a "put" to dispatch for sagas
         //SET means go from the saga to the reducer 
-        yield put( { type: 'SET_MOVIES', payload: response.data } );
+        yield put( { type: 'SET_SPECIFIC_MOVIE', payload: response.data[0] } );
       } catch( err ){
         alert( 'no' );
         console.log( err );
@@ -51,6 +51,18 @@ const sagaMiddleware = createSagaMiddleware();
 const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
+            console.log("movies reducer", action.payload)
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+// Used to store movies returned from the server
+const specificMovie = (state = {}, action) => {
+    switch (action.type) {
+        case 'SET_SPECIFIC_MOVIE':
+            console.log("specific movies reducer", action.payload);
             return action.payload;
         default:
             return state;
@@ -71,7 +83,8 @@ const genres = (state = [], action) => {
 const storeInstance = createStore(
     combineReducers({
         movies,
-        genres
+        genres,
+        specificMovie
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),

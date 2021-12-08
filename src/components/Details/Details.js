@@ -9,35 +9,16 @@ function Details(props) {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const movies = useSelector(store => store.movies);
-
-//   const movies = useSelector((store) => store.movies);
-
-//   useEffect(() => {
-//     dispatch({ type: "FETCH_MOVIES" });
-//   }, []);
-
-//   const back = () => {
-//     history.push("/");
-//   };
+  const specificMovie = useSelector(store => store.specificMovie);
 
   return (
     <div>
       <h1>Details</h1>
       {/* history.goBack back to previous page */}
       <button onClick={history.goBack}>Back to list</button>
-      {/* <section className="movies">
-        {movies.map((movie) => {
-          return (
-            <div key={movie.id}>
-              <h3>{movie.title}</h3>
-              <ul>
-                <li>{movie.description}</li>
-              </ul>
-            </div>
-          );
-        })}
-      </section> */}
+      <p>{specificMovie.title}</p>
+      <img src={specificMovie.poster}/>
+      <p>{specificMovie.description}</p>
     </div>
   );
 }
