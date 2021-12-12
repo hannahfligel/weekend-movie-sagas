@@ -3,6 +3,8 @@ import './App.css';
 import MovieList from '../MovieList/MovieList';
 import Details from '../Details/Details';
 import AddMovie from '../AddMovie/AddMovie';
+import Button from 'react-bootstrap/Button';
+
 
 
 function App() {

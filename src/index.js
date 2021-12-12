@@ -10,6 +10,8 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 // Create the rootSaga generator function
 function* rootSaga() {
@@ -90,6 +92,8 @@ function* fetchAllMovies() {
 const sagaMiddleware = createSagaMiddleware();
 
 // Used to store movies returned from the server
+//set the state initial value to an empty array 
+//action is what was dispatched from the saga
 const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':

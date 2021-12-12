@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useHistory } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+
 
 function Details(props) {
   //const reducerName = useSelector( store => store.reducerName );
