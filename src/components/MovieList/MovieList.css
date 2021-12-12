@@ -1,5 +1,22 @@
+@font-face {
+    font-family: Neue-Helvetica;
+    src: url(../../fonts/Helvetica\ Neue\ LT\ 65\ Medium.ttf);
+  }
+  
+  @font-face {
+    font-family: thin-Neue-Helvetica;
+    src: url(../../fonts/Helvetica\ Neue\ LT\ 35\ Thin.ttf);
+  }
+
 .movies {
     display : flex;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: space-between; */
 }
+
+
+h2{
+    font-family: Neue-Helvetica;
+
+}
+

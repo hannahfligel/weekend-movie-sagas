@@ -5,19 +5,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../App/App.css";
 import { useNavigate, useHistory } from "react-router-dom";
 import AddMovieButton from '../AddMovieButton/AddMovieButton';
+import MovieList from "../MovieList/MovieList";
 
 function Header() {
   const filmIcon = <FontAwesomeIcon icon={faFilm} />;
 
   const history = useHistory();
 
-  // const addMovie = () => {
-  //   history.push("/addmovie");
-  // };
+  const movielist = () => {
+    history.push("/");
+  };
 
   return (
     <header className="App-header">
-      <h1>
+      <h1 onClick={movielist}>
         <span className="filmIcon">{filmIcon}</span>The Movies Saga
       </h1>
       <AddMovieButton/>
