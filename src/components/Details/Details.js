@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useHistory } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
+import { useHistory } from "react-router-dom";
 
 
 function Details(props) {
