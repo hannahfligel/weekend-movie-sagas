@@ -1,13 +1,37 @@
-/* .App {
-  text-align: center;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@400;500;600&family=Zen+Antique&display=swap');
+
+@font-face {
+  font-family: Neue-Helvetica;
+  src: url(../../fonts/Helvetica\ Neue\ LT\ 65\ Medium.ttf);
+}
+
+@font-face {
+  font-family: thin-Neue-Helvetica;
+  src: url(../../fonts/Helvetica\ Neue\ LT\ 35\ Thin.ttf);
+}
+
+
+
+.App {
+  background-color: #19212A;
+}
 
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: #19212A;
+  height: 80px;
   padding: 20px;
-  color: white;
+  border-bottom: 1px solid rgb(46, 53, 60);
+  color: rgb(250, 250, 250) !important;
+  font-family: 'Bebas Neue', cursive;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.filmIcon{
+  color: #A543EA;
+  margin-right: 12px;
 }
 
 .App-title {
@@ -21,4 +45,23 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  color: rgb(66, 76, 87);
+  padding: 32px;
+  margin-top: 10px;
+}
+
+.addMovieButton{
+  font-family: thin-Neue-Helvetica;
+  background-color: #A642EC !important;
+  border-color: #A642EC !important;
+}
+
+.addMovieButton:hover{
+  background-color: #65278D !important;
+  border-color: #65278D !important;
 }

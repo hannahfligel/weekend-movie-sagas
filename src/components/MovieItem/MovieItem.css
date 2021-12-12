@@ -1,0 +1,26 @@
+
+@font-face {
+    font-family: Neue-Helvetica;
+    src: url(../../fonts/Helvetica\ Neue\ LT\ 65\ Medium.ttf);
+  }
+  
+  @font-face {
+    font-family: thin-Neue-Helvetica;
+    src: url(../../fonts/Helvetica\ Neue\ LT\ 35\ Thin.ttf);
+  }
+
+.movieCard{
+    margin: 10px;
+    transition: .2s;
+    background-color: #28313C !important;
+    color: white;
+    font-family: Neue-Helvetica;
+    text-transform:capitalize;
+}
+
+.movieCard:hover{
+    border: 5px solid #A543EA;
+    transition: .2s;
+    cursor: pointer;
+}
+

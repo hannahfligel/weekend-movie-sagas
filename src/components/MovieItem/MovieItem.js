@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import "../MovieList/MovieList.css";
 import { useNavigate, useHistory } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import "../MovieItem/MovieItem.css";
 
 function MovieItem(props) {
   const dispatch = useDispatch();
@@ -25,17 +27,16 @@ function MovieItem(props) {
     dispatch({ type: "GET_SPECIFIC_MOVIE", payload: movie.id });
   };
 
-
   return (
     //onClick, run the details function and passing it the individual movie info that was clicked on
-    <div key={props.movie.id}>
-      <h3>{props.movie.title}</h3>
-      <img
-        onClick={() => details(props.movie)}
-        src={props.movie.poster}
-        alt={props.movie.title}
-      />
-    </div>
+    <Card className="movieCard" onClick={() => details(props.movie)} style={{ width: '18rem' }}>
+    <Card.Img  alt={props.movie.title} variant="top" src={props.movie.poster} />
+    <Card.Body>
+      <Card.Title>
+        {props.movie.title}
+      </Card.Title>
+    </Card.Body>
+    </Card>
   );
 }
 
