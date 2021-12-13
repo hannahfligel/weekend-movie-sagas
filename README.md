@@ -1,4 +1,4 @@
-# React Gallery
+# Movie Sagas
 
 <img src='/src/images/weekend-movie-sagas.gif'></img>
 
