@@ -3,8 +3,6 @@
 <img src='/src/images/weekend-movie-sagas.gif'></img>
 
 ## Description 
-This full-stack application allow users to view a photo gallery, add an image by inputting an image URL and image description. It also allows the user to like and delete an image. 
-
 This full-stack application allow users to store a record of all of their movies. Users can view, and add movies to their library.
 
 ## Prerequisites
