@@ -15,14 +15,14 @@ For this weekend challenge you'll be expanding on a movie management application
 
 ## Database Setup
 
-[x] Create a database named `saga_movies_weekend`
-[x] Run the queries from `database.sql` on the `saga_movies_weekend` database
+- [x] Create a database named `saga_movies_weekend`
+- [x] Run the queries from `database.sql` on the `saga_movies_weekend` database
 
 ## Install Dependencies
 
-[x] `npm install`
-[x] `npm run server`
-[x] `npm run client`
+- [x] `npm install`
+- [x] `npm run server`
+- [x] `npm run client`
 
 ## Notes
 
@@ -44,17 +44,17 @@ We've added some movie posters in the `public/images` folder, and the database i
 
 This view is completed already! It displays all of the movies in the movie database. 
 
-[x] TODO: When a movie poster is clicked, a user should be brought to the `/details` view for that movie.
-[x] TODO: Have a way to get to the Add Movie Page
+- [x] TODO: When a movie poster is clicked, a user should be brought to the `/details` view for that movie.
+- [x] TODO: Have a way to get to the Add Movie Page
 
 ### Details Page
 
-[x] This should show all details **including ALL genres** for the selected movie. You will need to store this data in redux!
+- [x] This should show all details **including ALL genres** for the selected movie. You will need to store this data in redux!
 
  > Hint : You can make a GET request for a specific movie. Remember `req.params` and `:id`?
  
 
-[x] TODO: The details page should have a `Back to List` button, which should bring the user to the Home/List Page
+- [x] TODO: The details page should have a `Back to List` button, which should bring the user to the Home/List Page
 
 > Base functionality does not require the movie details to load correctly after refresh of the browser.
 
@@ -62,15 +62,15 @@ This view is completed already! It displays all of the movies in the movie datab
 
 This should show:
 
-[x] an input field (for the movie title)
-[x] an input field (for the movie poster image URL)
-[x] a textarea (for the movie description)
-[x] a dropdown (for the genres)
+- [x] an input field (for the movie title)
+- [x] an input field (for the movie poster image URL)
+- [x] a textarea (for the movie description)
+- [x] a dropdown (for the genres)
 
 The Add Movie page should have the buttons:
 
-[x] `Cancel` button, which should bring the user to the Home/List Page
-[x] `Save` button, which should save these inputs in the database and bring the user to the Home/List Page (which now has the new movie)
+- [x] `Cancel` button, which should bring the user to the Home/List Page
+- [x] `Save` button, which should save these inputs in the database and bring the user to the Home/List Page (which now has the new movie)
 
 **Base functionality does not require being able to select more than one genre for a new movie**
 
