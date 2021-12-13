@@ -1,9 +1,52 @@
-# Project Name
+# React Gallery
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+<img src='/src/images/weekend-movie-sagas.gif'></img>
 
-## Description
+## Description 
+This full-stack application allow users to view a photo gallery, add an image by inputting an image URL and image description. It also allows the user to like and delete an image. 
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This full-stack application allow users to store a record of all of their movies. Users can view, and add movies to their library.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Prerequisites
+- JavaScript 
+- React
+- Redux 
+- HTML
+- CSS
+- Node
+- Express 
+- PostgreSQL 
+
+## Getting Started 
+- Open editor and run npm install
+- Create a database called "saga_movies_weekend"
+- Copy the code in the database.sql file into your sql database
+- In terminal, run "npm run server"
+- In another terminal window, run "npm run client"
+
+## Usage 
+### Add Movie 
+- In the header, click the "Add Movie" button 
+- Fill in the Add Movie form 
+- Click the submit button to submit a new movie to your movie list
+- Click cancel to go back to the home page 
+
+### View Movie Description 
+- On the home page, click one of the movie cards 
+- Click the back button to navigate back to the home page 
+
+## Built with 
+- JavaScript 
+- React
+- HTML
+- CSS
+- Node
+- Express 
+- PostgreSQL 
+- Postico
+- Bootstrap 
+- Material UI 
+- Font Awesome 
+
+## Acknowledgment 
+- Thanks to Dev, my instructor at Prime Digital Academy for assigning this fun and challenging project and to the Ionian cohort!

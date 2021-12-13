@@ -23,7 +23,7 @@ function Details(props) {
       <Button className="backButton" onClick={history.goBack}><span className="chevronLeft">{chevronLeft}</span>BACK</Button>
       <Row>
           {/* history.goBack back to previous page */}
-          <Col className="posterCol" xs="4">
+          <Col className="posterCol" xs="12" lg="4">
             <img src={specificMovie.poster} />
           </Col>
           <Col xs="8">
