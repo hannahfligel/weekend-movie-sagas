@@ -1,4 +1,74 @@
-.AddMovieForm {
-    display: flex;
-    flex-direction: column;
+@font-face {
+    font-family: Neue-Helvetica;
+    src: url(../../fonts/Helvetica\ Neue\ LT\ 65\ Medium.ttf);
+  }
+  
+  @font-face {
+    font-family: thin-Neue-Helvetica;
+    src: url(../../fonts/Helvetica\ Neue\ LT\ 35\ Thin.ttf);
+  }
+  
+
+.addMovieForm {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
 }
+
+textarea{
+    border: 1px solid white !important;
+    background-color: #19212A !important;
+    border: none;
+    color: white;
+    font-size: 18px !important;
+    font-family: thin-Neue-Helvetica !important;
+}
+
+label{
+    display: flex !important;
+    flex-direction: column !important;
+    width: 500px;
+    margin-bottom: 40px;
+    font-size: 15px;
+    font-family: Neue-Helvetica;
+    text-transform: uppercase;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+}
+
+.submitButton{
+    margin-bottom: 20px;
+    border-radius: 8px !important;
+    background-color: #A642EC !important;
+    border: #A642EC !important;
+}
+
+.submitButton:hover{
+    background-color: #66278E !important;
+    border: #66278E !important;
+}
+
+.cancelButton{
+    margin-bottom: 20px;
+    border-radius: 8px !important;
+    background-color: #394655 !important;
+    border: 1px solid #28313C !important;
+    color: white !important;
+}
+
+.buttonGroup{
+    min-width: 500px !important;
+}
+
+input, select{
+    background-color: #19212A;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 18px !important;
+    font-family: thin-Neue-Helvetica !important;
+}
+

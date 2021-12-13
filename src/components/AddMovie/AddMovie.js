@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useHistory } from "react-router-dom";
+import { Container, ButtonGroup, Button } from "react-bootstrap";
+import "./AddMovie.css";
 
 
 function AddMovie(props) {
@@ -41,37 +43,47 @@ function AddMovie(props) {
 
   return (
     <div>
-      <h1>AddMovie</h1>
-      <input
-        onChange={(event) => setNewMovie({ ...newMovie, title: event.target.value })}
-        placeholder="movie title"
-      ></input>
-      <input
-        onChange={(event) => setNewMovie({ ...newMovie, poster: event.target.value })}
-        placeholder="image url"
-      ></input>
-      <textarea
-        onChange={(event) => setNewMovie({ ...newMovie, description: event.target.value })}
-        placeholder="movie description"
-      ></textarea>
-      <label htmlFor="genreInput">Movie Genre</label>
-      <select
-        onChange={(event) => setNewMovie({ ...newMovie, genre_id: event.target.value })}
-        id="genreInput"
-        name="Movie Genre"
-      >
-        <option>Select genre</option>
-        {genres.map((genre) => {
-          return (
-            //onClick, run the details function and passing it the individual movie info that was clicked on
-            <option value={genre.id} key={genre.id}>
-              {genre.name}
-            </option>
-          );
-        })}
-      </select>
-      <button onClick={submit}>Save</button>
-      <button onClick={cancel}>Cancel</button>
+      <Container>
+        <h2>Add Movie</h2>
+        <form className="addMovieForm">
+          <label htmlFor="movieTitle"> Movie title
+            <input
+              id="movieTitle" onChange={(event) => setNewMovie({ ...newMovie, title: event.target.value })}
+            />
+          </label>
+          <label htmlFor="imageUrl"> Image URL 
+            <input
+              id="imageUrl" onChange={(event) => setNewMovie({ ...newMovie, poster: event.target.value })}
+            />
+          </label>
+          <label htmlFor="movieDescription"> Movie description
+            <textarea
+              id="movieDescription" onChange={(event) => setNewMovie({ ...newMovie, description: event.target.value })}
+            ></textarea>
+          </label>
+          <label htmlFor="genreInput">Movie Genre
+          <select
+            onChange={(event) => setNewMovie({ ...newMovie, genre_id: event.target.value })}
+            id="genreInput"
+            name="Movie Genre"
+          >
+            <option>select genre</option>
+            {genres.map((genre) => {
+              return (
+                //onClick, run the details function and passing it the individual movie info that was clicked on
+                <option value={genre.id} key={genre.id}>
+                  {genre.name}
+                </option>
+              );
+            })}
+          </select>
+          </label>
+          <ButtonGroup className="buttonGroup" vertical>
+            <Button className="submitButton" onClick={submit}>Submit</Button>
+            <Button className="cancelButton" onClick={cancel}>Cancel</Button>
+          </ButtonGroup>
+        </form>
+      </Container>
     </div>
   );
 }
