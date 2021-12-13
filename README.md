@@ -3,7 +3,7 @@
 <img src='/src/images/weekend-movie-sagas.gif'></img>
 
 ## Description 
-This full-stack application allow users to store a record of all of their movies. Users can view, and add movies to their library.
+This full-stack application allows users to store a record of all of their movies. Users can view and add movies to their library.
 
 ## Prerequisites
 - JavaScript 
