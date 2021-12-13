@@ -1,0 +1,57 @@
+@font-face {
+    font-family: Neue-Helvetica;
+    src: url(../../fonts/Helvetica\ Neue\ LT\ 65\ Medium.ttf);
+  }
+  
+  @font-face {
+    font-family: thin-Neue-Helvetica;
+    src: url(../../fonts/Helvetica\ Neue\ LT\ 35\ Thin.ttf);
+  }
+
+
+.posterCol{
+    margin: 0px;
+}
+
+.detailTitle{
+    font-size: 32px;
+    font-family: Neue-Helvetica;
+}
+
+.genreBox{
+    /* padding: 20px 10px; */
+    display: flex;
+    justify-content: center;
+    width: 20% !important;
+    margin: 0px 12px;
+    padding: 10px 0px;
+    border-radius: 20px;
+    background-color: #3b3b3e;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: Neue-Helvetica;
+    letter-spacing: 1px;
+}
+
+.genreRow{
+    margin-bottom: 18px;
+}
+
+.detailsDescription{
+    font-family: thin-Neue-Helvetica;
+}
+
+.chevronLeft{
+    margin-right: 7px;
+}
+
+.backButton{
+    background-color: #19212A !important;
+    border: #19212A !important;
+    margin-bottom: 32px;
+    color: #6D727A!important;
+}
+
+.backButton:hover{
+    color: white !important;
+}

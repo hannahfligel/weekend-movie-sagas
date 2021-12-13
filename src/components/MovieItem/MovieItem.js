@@ -5,6 +5,8 @@ import "../MovieList/MovieList.css";
 import { useNavigate, useHistory } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+
 import "../MovieItem/MovieItem.css";
 
 function MovieItem(props) {
@@ -29,6 +31,7 @@ function MovieItem(props) {
 
   return (
     //onClick, run the details function and passing it the individual movie info that was clicked on
+    <Col>
     <Card className="movieCard" onClick={() => details(props.movie)} style={{ width: '18rem' }}>
     <Card.Img  alt={props.movie.title} variant="top" src={props.movie.poster} />
     <Card.Body>
@@ -37,6 +40,7 @@ function MovieItem(props) {
       </Card.Title>
     </Card.Body>
     </Card>
+    </Col>
   );
 }
 

@@ -19,25 +19,24 @@ function MovieList() {
     dispatch({ type: "FETCH_MOVIES" });
   }, []);
 
-
-//   const addMovie = () => {
-//     history.push("/addmovie");
-//   };
+  //   const addMovie = () => {
+  //     history.push("/addmovie");
+  //   };
 
   return (
     <main>
       <Container>
-    <h2>Movies</h2>
-    
-      {/* <Button onClick={addMovie}>add movie</Button> */}
-      <section className="movies">
-        {movies.map((movie) => {
-          return (
-            //onClick, run the details function and passing it the individual movie info that was clicked on
-            <MovieItem movie={movie} key={movie.id} />
-          );
-        })}
-      </section>
+        <h2>Movies</h2>
+
+        {/* <Button onClick={addMovie}>add movie</Button> */}
+        <section className="movies">
+          {movies.map((movie) => {
+            return (
+              //onClick, run the details function and passing it the individual movie info that was clicked on
+              <MovieItem movie={movie} key={movie.id} />
+            );
+          })}
+        </section>
       </Container>
     </main>
   );
