@@ -4,7 +4,7 @@ import { faFilm } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../App/App.css";
 import { useNavigate, useHistory } from "react-router-dom";
-import AddMovieButton from '../AddMovieButton/AddMovieButton';
+import AddMovieButton from "../AddMovieButton/AddMovieButton";
 import MovieList from "../MovieList/MovieList";
 
 function Header() {
@@ -21,7 +21,7 @@ function Header() {
       <h1 onClick={movielist}>
         <span className="filmIcon">{filmIcon}</span>The Movies Saga
       </h1>
-      <AddMovieButton/>
+      <AddMovieButton />
     </header>
   );
 }

@@ -32,14 +32,20 @@ function MovieItem(props) {
   return (
     //onClick, run the details function and passing it the individual movie info that was clicked on
     <Col>
-    <Card className="movieCard" onClick={() => details(props.movie)} style={{ width: '18rem' }}>
-    <Card.Img  alt={props.movie.title} variant="top" src={props.movie.poster} />
-    <Card.Body>
-      <Card.Title>
-        {props.movie.title}
-      </Card.Title>
-    </Card.Body>
-    </Card>
+      <Card
+        className="movieCard"
+        onClick={() => details(props.movie)}
+        style={{ width: "18rem" }}
+      >
+        <Card.Img
+          alt={props.movie.title}
+          variant="top"
+          src={props.movie.poster}
+        />
+        <Card.Body>
+          <Card.Title>{props.movie.title}</Card.Title>
+        </Card.Body>
+      </Card>
     </Col>
   );
 }
