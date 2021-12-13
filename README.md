@@ -47,4 +47,4 @@ This full-stack application allows users to store a record of all of their movie
 - Font Awesome 
 
 ## Acknowledgment 
-- Thanks to Dev, my instructor at Prime Digital Academy for assigning this fun and challenging project and to the Ionian cohort!
+- Thanks to Dev, my instructor at Prime Digital Academy for assigning this fun and challenging project and to the incredible and inspiring Ionian cohort! Also, huge thanks to my partner Stav for all the support and encouragement along the way.
